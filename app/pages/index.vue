@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center h-screen ">
+  <div class="flex flex-col items-center">
     <ComponentBanner /> <!--  Componente de banner donde se encuentra la imagen y la descripcion del inicio  -->
     <!-- <ComponentSkills /> -->
     <ComponentStrap />
@@ -20,7 +20,6 @@
         />
       </div>
     </div>
-    <ComponentFooter />
   </div>
 </template>
 
@@ -29,11 +28,10 @@ import ComponentBanner from "~/components/ComponentBanner.vue";
 // import ComponentSkills from "~/components/ComponentSkills.vue"
 import ComponentStrap from "~/components/ComponentStrap.vue";
 import WhatIDoComponent from "~/components/WhatIDoComponent.vue";
-import ComponentFooter from "~/components/ComponentFooter.vue";
 import ComponentProject from "~/components/ComponentProject.vue";
 
 definePageMeta({
-  layout: 'DefaultLayout'
+  layout: 'default'
 })
 
 const proyectos = [
