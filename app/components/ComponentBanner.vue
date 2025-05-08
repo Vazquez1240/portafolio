@@ -4,10 +4,10 @@
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-2">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-24  items-center">
-          <div 
+          <div
             v-motion="slideFromTop"
             class="space-y-2 mt-0 md:mt-22">
-            <div 
+            <div
               v-motion
               :initial="{ opacity: 0, y: -50 }"
               :enter="{ opacity: 1, y: 0 }"
@@ -17,7 +17,7 @@
               Desarrollador de Software
             </div>
 
-            <h1 
+            <h1
               v-motion
               :initial="{ opacity: 0, y: -50 }"
               :enter="{ opacity: 1, y: 0 }"
@@ -26,7 +26,7 @@
               Martín De La Torre
             </h1>
 
-            <p 
+            <p
               v-motion
               :initial="{ opacity: 0, y: -50 }"
               :enter="{ opacity: 1, y: 0 }"
@@ -38,7 +38,7 @@
               cloud.
             </p>
 
-            <div 
+            <div
               v-motion
               :initial="{ opacity: 0, y: -50 }"
               :enter="{ opacity: 1, y: 0 }"
@@ -56,13 +56,13 @@
             </div>
           </div>
 
-          <div 
+          <div
             v-motion="slideFromTopDelayed"
             class="relative h-[400px] rounded-xl overflow-hidden">
             <NuxtImg
                 src="https://cloud-images-mdtv.web.app/images/img-portafolio.png"
                 alt="Foto de perfil"
-                class="object-cover w-full h-full image-profile ml-10"
+                class="object-cover w-full h-full image-profile ml-0 md:ml-10"
                 sizes="(min-width: 768px) 400px"
                 format="webp"
                 loading="lazy"

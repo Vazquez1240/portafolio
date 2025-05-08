@@ -24,5 +24,11 @@ export default defineNuxtConfig({
     domains: ['cloud-images-mdtv.web.app']
   },
 
+  colorMode: {
+    preference: 'light', // establecer el modo por defecto
+    fallback: 'light', // fallback si no se puede detectar el sistema
+    classSuffix: '' // evita usar -dark o -light al final
+  },
+
   compatibilityDate: '2024-11-27'
 })
