@@ -1,8 +1,8 @@
 <template>
   <section class="container mx-auto py-16 px-4">
-    <h2 class="text-3xl font-bold mb-12 text-center">Mis habilidades</h2>
+    <h2 class="text-3xl font-bold mb-12  ml-2">Mis habilidades</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class=" rounded-xl p-8 bg-card shadow-lg transition-transform duration-400 transform hover:-translate-y-1 hover:shadow-xl ">
         <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
           <Icon name="material-symbols-light:code-rounded" class="h-6 w-6 " />
