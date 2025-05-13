@@ -1,8 +1,10 @@
 <template>
   <div class="flex flex-col items-center">
-    <ComponentBanner /> <!--  Componente de banner donde se encuentra la imagen y la descripcion del inicio  -->
+    <client-only>
+      <ComponentBanner />  <!-- Componente de banner donde se encuentra la imagen y la descripcion del inicio  -->
+      <ComponentStrap />
+    </client-only>
     <!-- <ComponentSkills /> -->
-    <ComponentStrap />
     <WhatIDoComponent />
     <div>
       <div class="w-full justify-center">

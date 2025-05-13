@@ -65,7 +65,7 @@
             :delay="200"
             class="relative h-[400px] rounded-xl overflow-hidden">
             <NuxtImg
-                src="https://cloud-images-mdtv.web.app/images/img-portafolio.png"
+                src="https:///cloud-images-mdtv.web.app/images/img-portafolio.png"
                 alt="Foto de perfil"
                 class="object-cover w-full h-full image-profile ml-0 md:ml-10"
                 sizes="(min-width: 768px) 400px"
@@ -80,7 +80,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
+import { useMotion } from '@vueuse/motion'
 
 const startingYear = 2022
 const now = new Date()
@@ -88,6 +89,45 @@ const now = new Date()
 const yearsOfExperience = computed(() => {
   const baseYears = now.getFullYear() - startingYear
   return now.getMonth() >= 1 ? baseYears : baseYears - 1
+})
+
+const mainContent = ref(null)
+const badge = ref(null)
+const title = ref(null)
+const description = ref(null)
+const buttons = ref(null)
+const imageContainer = ref(null)
+
+onMounted(() => {
+  useMotion(mainContent, {
+    initial: { opacity: 0, y: -50 },
+    enter: { opacity: 1, y: 0 }
+  })
+
+  useMotion(badge, {
+    initial: { opacity: 0, y: -50 },
+    enter: { opacity: 1, y: 0, transition: { delay: 200 } }
+  })
+
+  useMotion(title, {
+    initial: { opacity: 0, y: -50 },
+    enter: { opacity: 1, y: 0, transition: { delay: 400 } }
+  })
+
+  useMotion(description, {
+    initial: { opacity: 0, y: -50 },
+    enter: { opacity: 1, y: 0, transition: { delay: 600 } }
+  })
+
+  useMotion(buttons, {
+    initial: { opacity: 0, y: -50 },
+    enter: { opacity: 1, y: 0, transition: { delay: 800 } }
+  })
+
+  useMotion(imageContainer, {
+    initial: { opacity: 0, y: -50 },
+    enter: { opacity: 1, y: 0, transition: { delay: 200 } }
+  })
 })
 
 // Definir las animaciones
