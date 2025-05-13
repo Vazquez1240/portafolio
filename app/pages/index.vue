@@ -6,7 +6,7 @@
     <WhatIDoComponent />
     <div>
       <div class="w-full justify-center">
-        <h2 class="text-3xl font-bold mb-12 ml-4">Mis Proyectos</h2>
+        <h2 class="text-3xl font-bold mb-12 ml-4">Mis Proyectos Destacados</h2>
       </div>
       <div class=" container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto px-4">
         <ComponentProject
@@ -29,10 +29,6 @@ import ComponentBanner from "~/components/ComponentBanner.vue";
 import ComponentStrap from "~/components/ComponentStrap.vue";
 import WhatIDoComponent from "~/components/WhatIDoComponent.vue";
 import ComponentProject from "~/components/ComponentProject.vue";
-
-definePageMeta({
-  layout: 'default'
-})
 
 const proyectos = [
   {

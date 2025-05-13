@@ -5,7 +5,9 @@
       <div class="container mx-auto px-2">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-24  items-center">
           <div
-            v-motion="slideFromTop"
+            v-motion
+            :initial="{ opacity: 0, y: -50 }"
+            :enter="{ opacity: 1, y: 0 }"
             class="space-y-2 mt-0 md:mt-22">
             <div
               v-motion
@@ -57,7 +59,10 @@
           </div>
 
           <div
-            v-motion="slideFromTopDelayed"
+            v-motion
+            :initial="{ opacity: 0, y: -50 }"
+            :enter="{ opacity: 1, y: 0 }"
+            :delay="200"
             class="relative h-[400px] rounded-xl overflow-hidden">
             <NuxtImg
                 src="https://cloud-images-mdtv.web.app/images/img-portafolio.png"
