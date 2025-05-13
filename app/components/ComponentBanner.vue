@@ -129,18 +129,6 @@ onMounted(() => {
     enter: { opacity: 1, y: 0, transition: { delay: 200 } }
   })
 })
-
-// Definir las animaciones
-const slideFromTop = {
-  initial: { opacity: 0, y: -100 },
-  enter: { opacity: 1, y: 0, transition: { duration: 800 } }
-}
-
-const slideFromTopDelayed = {
-  initial: { opacity: 0, y: -100 },
-  enter: { opacity: 1, y: 0, transition: { duration: 800, delay: 200 } }
-}
-
 </script>
 
 <style scoped>
