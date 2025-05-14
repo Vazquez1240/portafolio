@@ -3,22 +3,17 @@
     <main class="flex-1 container mx-auto py-16 px-4">
       <div class="max-w-4xl mx-auto">
         <div
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0 }"
-          class="flex justify-end items-start mb-8"
-        >
+            v-motion
+            :initial="{ opacity: 0, y: 20 }"
+            :enter="{ opacity: 1, y: 0 }"
+            class="flex justify-end items-start mb-8">
           <a
               href="https://cloud-images-mdtv.web.app/documents/MartinDeLaTorreVazquez_CV.pdf"
               download="MartinDeLaTorreVazquez_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
           >
-            <UButton 
-              color="secondary" 
-              variant="outline" 
-              class="gap-2 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
+            <UButton color="secondary" variant="outline" class="gap-2 cursor-pointer">
               <Icon name="lucide:download" class="h-4 w-4" />
               Descargar CV
             </UButton>
@@ -26,52 +21,48 @@
         </div>
 
         <!--    SECCION DE MI INFORMACIÓN -->
-        <div
+        <section
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0 }"
           :delay="200"
-          class="bg-white dark:bg-gray-900 rounded-xl p-8 mb-8 shadow-xl hover:shadow-2xl transition-all duration-300"
-        >
+          class="bg-white dark:bg-gray-900 rounded-xl p-8 mb-8 shadow-lg transition-transform duration-400 transform hover:-translate-y-1 hover:shadow-xl">
           <div class="flex flex-col md:flex-row justify-between gap-4 mb-6">
             <div
               v-motion
               :initial="{ opacity: 0, x: -20 }"
               :enter="{ opacity: 1, x: 0 }"
-              :delay="300"
-            >
+              :delay="400">
               <h2 class="text-2xl font-bold">Martín De La Torre Vázquez</h2>
               <p class="text-lg text-gray-500 dark:text-gray-400">Desarrollador de software</p>
             </div>
-            <div 
+            <div
               v-motion
               :initial="{ opacity: 0, x: 20 }"
               :enter="{ opacity: 1, x: 0 }"
               :delay="400"
-              class="space-y-1 text-sm"
-            >
-              <div class="flex items-center gap-2 hover:text-secondary transition-colors duration-300">
+              class="space-y-1 text-sm">
+              <div class="flex items-center gap-2">
                 <Icon name="lucide:phone" class="h-4 w-4 text-gray-500" />
                 <span>(+52) 481 123 2663</span>
               </div>
-              <div class="flex items-center gap-2 hover:text-secondary transition-colors duration-300">
+              <div class="flex items-center gap-2">
                 <Icon name="lucide:mail" class="h-4 w-4 text-gray-500" />
                 <span>vazquezmartin1240@gmail.com</span>
               </div>
-              <div class="flex items-center gap-2 hover:text-secondary transition-colors duration-300">
+              <div class="flex items-center gap-2">
                 <Icon name="lucide:linkedin" class="h-4 w-4 text-gray-500" />
                 <span>linkedin.com/in/martindtv/</span>
               </div>
             </div>
           </div>
 
-          <div 
+          <div
             v-motion
             :initial="{ opacity: 0, y: 20 }"
             :enter="{ opacity: 1, y: 0 }"
-            :delay="500"
-            class="border-t pt-6 mb-6"
-          >
+            :delay="600"
+            class="border-t pt-6 mb-6">
             <p class="text-lg text-gray-700 dark:text-gray-300" style="text-align: justify">
               Desarrollador de software con experiencia en diseño e implementación de arquitecturas cloud y APIs escalables. Con experiencia en
               Python y tecnologías de contenedores con conocimientos en despliegue de aplicaciones en entornos de nube como GCP, AWS y Azure.
@@ -79,189 +70,156 @@
             </p>
           </div>
 
-          <div 
+          <div
             v-motion
             :initial="{ opacity: 0, y: 20 }"
             :enter="{ opacity: 1, y: 0 }"
-            :delay="600"
-            class="grid grid-cols-1 md:grid-cols-4 gap-4"
-          >
+            :delay="800"
+            class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div class="md:col-span-1">
               <h3 class="font-semibold text-lg">Idiomas</h3>
               <ul class="mt-2 space-y-1 text-gray-500 dark:text-gray-400">
-                <li class="hover:text-secondary transition-colors duration-300">Inglés: B1</li>
-                <li class="hover:text-secondary transition-colors duration-300">Español: Nativo</li>
+                <li>Inglés: B1</li>
+                <li>Español: Nativo</li>
               </ul>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- EXPERIENCIA -->
-        <div
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :enter="{ opacity: 1, y: 0 }"
-          :delay="400"
-          class="bg-white dark:bg-gray-900 shadow-xl rounded-xl p-8 mb-8 hover:shadow-2xl transition-all duration-300"
-        >
-          <h2 
-            v-motion
-            :initial="{ opacity: 0, x: -20 }"
-            :enter="{ opacity: 1, x: 0 }"
-            :delay="500"
-            class="text-2xl font-bold mb-6"
-          >
-            Experiencia Profesional
-          </h2>
+        <section class="bg-white dark:bg-gray-900 rounded-xl p-8 mb-8 shadow-lg transition-transform duration-400 transform hover:-translate-y-1 hover:shadow-xl">
+          <h2 class="text-2xl font-bold mb-6">Experiencia Profesional</h2>
 
           <div class="space-y-8">
             <div
-              v-for="(exp, index) in experiencia"
-              :key="index"
-              v-motion
-              :initial="{ opacity: 0, x: -20 }"
-              :enter="{ opacity: 1, x: 0 }"
-              :delay="100 * index"
-              class="border-l-4 border-secondary pl-6 relative hover:border-primary transition-colors duration-300"
-            >
-              <div class="absolute w-3 h-3 bg-secondary rounded-full -left-[6.5px] top-1.5 transition-all duration-300 group-hover:scale-125"></div>
+                v-for="(exp, index) in experiencia"
+                :key="index"
+                class="border-l-4 border-secondary pl-6 relative mb-8 experience-item"
+                :style="{ '--i': index }">
+              <div class="absolute w-3 h-3 bg-secondary rounded-full -left-[6.5px] top-1.5"></div>
               <div class="mb-2">
-                <h3 class="text-xl font-semibold hover:text-secondary transition-colors duration-300">{{ exp.titulo }}</h3>
+                <h3 class="text-xl font-semibold" style="text-align: justify">{{ exp.titulo }}</h3>
                 <div class="flex justify-between text-sm text-gray-500">
-                  <p class="hover:text-secondary transition-colors duration-300">{{ exp.empresa }}</p>
-                  <p class="hover:text-secondary transition-colors duration-300">{{ exp.periodo }}</p>
+                  <p>{{ exp.empresa }}</p>
+                  <p>{{ exp.periodo }}</p>
                 </div>
               </div>
-              <p class="mb-3 hover:text-secondary transition-colors duration-300">{{exp.descripcion_general}}</p>
+              <p class="mb-3">{{exp.descripcion_general}}</p>
               <ul class="list-disc ml-3 list-inside space-y-2 text-gray-500 dark:text-gray-400">
-                <li 
-                  v-for="(item, i) in exp.descripcion" 
-                  :key="i"
-                  class="hover:text-secondary transition-colors duration-300"
-                >
-                  {{ item }}
-                </li>
+                <li v-for="(item, i) in exp.descripcion" :key="i">{{ item }}</li>
               </ul>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- EDUCACIÓN -->
-        <div
+        <section
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0 }"
-          :delay="600"
-          class="bg-white dark:bg-gray-900 shadow-xl rounded-xl p-8 mb-8 hover:shadow-2xl transition-all duration-300"
-        >
-          <h2 
+          :delay="2000"
+          class="bg-white dark:bg-gray-900 shadow-lg transition-transform duration-400 transform hover:-translate-y-1 hover:shadow-xl rounded-xl p-8 mb-8">
+          <h2
             v-motion
-            :initial="{ opacity: 0, x: -20 }"
-            :enter="{ opacity: 1, x: 0 }"
-            :delay="700"
-            class="text-2xl font-bold mb-6"
-          >
-            Educación
-          </h2>
+            :initial="{ opacity: 0, y: -20 }"
+            :enter="{ opacity: 1, y: 0 }"
+            :delay="2200"
+            class="text-2xl font-bold mb-6">Educación</h2>
 
           <div class="space-y-6">
             <div
-              v-for="(edu, index) in educacion"
-              :key="index"
-              v-motion
-              :initial="{ opacity: 0, x: -20 }"
-              :enter="{ opacity: 1, x: 0 }"
-              :delay="100 * index"
-              class="border-l-4 border-secondary pl-6 relative hover:border-primary transition-colors duration-300"
-            >
-              <div class="absolute w-3 h-3 bg-secondary rounded-full -left-[6.5px] top-1.5 transition-all duration-300 group-hover:scale-125"></div>
+                v-for="(edu, index) in educacion"
+                :key="index"
+                v-motion
+                :initial="{ opacity: 0, x: -20 }"
+                :enter="{ opacity: 1, x: 0 }"
+                :delay="2400 + (index * 200)"
+                class="border-l-4 border-secondary pl-6 relative">
+              <div class="absolute w-3 h-3 bg-secondary rounded-full -left-[6.5px] top-1.5"></div>
               <div>
-                <h3 class="text-xl font-semibold hover:text-secondary transition-colors duration-300">{{ edu.titulo }}</h3>
+                <h3 class="text-xl font-semibold">{{ edu.titulo }}</h3>
                 <div class="flex justify-between text-sm text-gray-500">
-                  <p class="hover:text-secondary transition-colors duration-300">{{ edu.institucion }}</p>
-                  <p class="hover:text-secondary transition-colors duration-300">{{ edu.periodo }}</p>
+                  <p>{{ edu.institucion }}</p>
+                  <p>{{ edu.periodo }}</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- HABILIDADES -->
-        <div
+        <section
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0 }"
-          :delay="800"
-          class="bg-white dark:bg-gray-900 shadow-xl rounded-xl p-8 hover:shadow-2xl transition-all duration-300"
-        >
-          <h2 
+          :delay="3000"
+          class="bg-white dark:bg-gray-900 shadow-lg transition-transform duration-400 transform hover:-translate-y-1 hover:shadow-xl rounded-xl p-8">
+          <h2
             v-motion
-            :initial="{ opacity: 0, x: -20 }"
-            :enter="{ opacity: 1, x: 0 }"
-            :delay="900"
-            class="text-2xl font-bold mb-6"
-          >
-            Habilidades Técnicas
-          </h2>
+            :initial="{ opacity: 0, y: -20 }"
+            :enter="{ opacity: 1, y: 0 }"
+            :delay="3200"
+            class="text-2xl font-bold mb-6">Habilidades Técnicas</h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-              v-for="(section, index) in ['herraminetas', 'frameworks', 'lenguajes', 'sistemas_operativos']"
-              :key="section"
-              v-motion
-              :initial="{ opacity: 0, scale: 0.95 }"
-              :enter="{ opacity: 1, scale: 1 }"
-              :delay="100 * index"
-            >
-              <div>
-                <h3 
-                  v-motion
-                  :initial="{ opacity: 0, y: -10 }"
-                  :enter="{ opacity: 1, y: 0 }"
-                  :delay="200 * index"
-                  class="font-semibold text-lg mb-3 hover:text-secondary transition-colors duration-300"
-                >
-                  {{ 
-                    section === 'herraminetas' ? 'Herramientas y Tecnologías' :
-                    section === 'frameworks' ? 'Frameworks y Bibliotecas' :
-                    section === 'lenguajes' ? 'Lenguajes de Programación' :
-                    'Sistemas Operativos'
-                  }}
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                  <div
-                    v-for="(item, i) in habilidades[section]"
-                    :key="item"
-                    v-motion
-                    :initial="{ opacity: 0, scale: 0.8 }"
-                    :enter="{ opacity: 1, scale: 1 }"
-                    :delay="50 * i"
-                  >
-                    <UBadge 
-                      color="secondary" 
-                      class="text-black transition-all duration-300 hover:scale-110 hover:shadow-lg" 
-                      variant="soft"
-                    >
-                      {{ item }}
-                    </UBadge>
-                  </div>
-                </div>
+          <div
+            v-motion
+            :initial="{ opacity: 0, y: 20 }"
+            :enter="{ opacity: 1, y: 0 }"
+            :delay="3400"
+            class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div>
+              <h3 class="font-semibold text-lg mb-3">Herramientas y Tecnologías</h3>
+              <div class="flex flex-wrap gap-2">
+                <UBadge v-for="fw in habilidades.herraminetas" :key="fw" color="secondary" class="text-black" variant="soft">
+                  {{ fw }}
+                </UBadge>
               </div>
             </div>
+
+            <div>
+              <h3 class="font-semibold text-lg mb-3">Frameworks y Bibliotecas</h3>
+              <div class="flex flex-wrap gap-2">
+                <UBadge v-for="fw in habilidades.frameworks" :key="fw" color="secondary" class="text-black" variant="soft">
+                  {{ fw }}
+                </UBadge>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-lg mb-3">Lenguajes de Programación</h3>
+              <div class="flex flex-wrap gap-2">
+                <UBadge v-for="lang in habilidades.lenguajes" :key="lang" color="secondary" class="text-black" variant="soft">
+                  {{ lang }}
+                </UBadge>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-lg mb-3">Sistemas Operativos</h3>
+              <div class="flex flex-wrap gap-2">
+                <UBadge v-for="lang in habilidades.sistemas_operativos" :key="lang" color="secondary" class="text-black" variant="soft">
+                  {{ lang }}
+                </UBadge>
+              </div>
+            </div>
+
           </div>
-        </div>
+        </section>
       </div>
     </main>
   </div>
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
+
 const experiencia = [
   {
     titulo: 'Analista de desarrollo',
     empresa: 'Gobierno de Monterrey',
     periodo: 'Noviembre 2023 - Actualidad',
-    descripcion_general: 'Liderazgo del Área de Desarrollo, enfocado en la arquitectura e implementación de soluciones cloud para servicios gubernamentales.',
+    descripcion_general: 'Encargado de la coordinación del Área de Desarrollo en la Secretaría de Innovación y Gobierno Abierto del Municipio de Monterrey, Nuevo León, liderando proyectos para optimizar procesos y mejorar la transparencia en los servicios públicos.',
     descripcion: [
       'Diseño e implementación de arquitecturas de microservicios con Python, Django REST Framework y Docker, garantizando\n' +
       'escalabilidad y alto rendimiento.',
@@ -271,8 +229,9 @@ const experiencia = [
       'Implementación de pipelines de integración continua para automatizar el despliegue de aplicaciones, reduciendo en un 40% los\n' +
       'tiempos de lanzamiento.',
       'Diseño y mantenimiento de bases de datos PostgreSQL, asegurando integridad y eficiencia en el almacenamiento de datos críticos.',
-      'Desarrollo de dashboards para visualización de datos y métricas de rendimiento utilizando JavaScript y bibliotecas de visualización.',
-      'Elaboración de documentación técnica y manuales de infraestructura para transferencia de conocimiento al equipo.'
+      'Elaboración de documentación técnica y manuales de infraestructura para transferencia de conocimiento al equipo.',
+      'Aplicación de metodologías ágiles (Scrum), participando en planning, refinamientos y retrospectivas.',
+
     ]
   },
   {
@@ -304,10 +263,33 @@ const habilidades = {
   'Heroku', 'DigitalOcean', 'Vercel', 'Railway' ],
   sistemas_operativos: [ 'Ubuntu', 'MacOS', 'Windows' ]
 }
+
+onMounted(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.experience-item').forEach((item) => {
+    observer.observe(item);
+  });
+});
 </script>
 
-<style scoped>
-.hover\:shadow-2xl:hover {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+<style>
+.experience-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.experience-item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
