@@ -59,34 +59,59 @@
               :delay="400">
               Fue en la preparatoria, como parte de mi carrera técnica, donde tuve mi primer contacto real con la programación. Al principio era un reto, pero pronto me di cuenta de que escribir código me hacía sentir algo diferente. Me gustaba pensar en lógica, buscar soluciones, ver cómo una idea se transformaba en algo que funcionaba en pantalla. Empecé a interesarme por cómo se construían las páginas web que usamos todos los días, y eso me llevó a aprender sobre desarrollo frontend.
             </p>
-            <p
-              v-motion
-              :initial="{ opacity: 0, y: 20 }"
-              :enter="{ opacity: 1, y: 0 }"
-              :delay="600">
-              Con el tiempo descubrí Python, y fue un punto de quiebre: su claridad, versatilidad y comunidad me atraparon por completo. Me permitió ir más allá de la interfaz y entender mejor cómo funcionan las cosas detrás de escena. Así comencé a explorar el desarrollo backend, bases de datos, APIs y herramientas modernas como Docker. Hoy estoy aprendiendo sobre Kubernetes y prácticas de despliegue que me permiten llevar aplicaciones a producción de manera más robusta.
-            </p>
-            <p
-              v-motion
-              :initial="{ opacity: 0, y: 20 }"
-              :enter="{ opacity: 1, y: 0 }"
-              :delay="800">
-              Programar para mí no es solo una habilidad técnica, es una forma de crear, de pensar, de mejorar cosas. Me motiva resolver problemas reales, automatizar tareas tediosas, y construir soluciones útiles y elegantes. Disfruto cada etapa del proceso: desde investigar, escribir y depurar código, hasta ver cómo lo que construí ayuda a otros.
-            </p>
-            <p
-                v-motion
-                :initial="{ opacity: 0, y: 20 }"
-                :enter="{ opacity: 1, y: 0 }"
-                :delay="800">
-              Además de escribir código, me gusta aprender constantemente, ya sea explorando nuevas tecnologías, leyendo documentación, o contribuyendo en proyectos personales. También creo que mi entorno y mis intereses —como la historia, la ciencia y la tecnología— enriquecen mi manera de pensar como desarrollador.
-            </p>
-            <p
-                v-motion
-                :initial="{ opacity: 0, y: 20 }"
-                :enter="{ opacity: 1, y: 0 }"
-                :delay="800">
-              Hoy, con varios proyectos encima y muchas ganas de seguir creciendo, tengo claro que este camino apenas empieza. Me gusta lo que hago, me apasiona aprender y mejorar cada día, y sobre todo, me motiva saber que con cada línea de código puedo acercarme un poco más a crear algo significativo.
-            </p>
+            <div  class="relative">
+              <div
+                ref="contentRef"
+                class="overflow-hidden"
+                :style="{ height: '0', opacity: 0 }"
+              >
+                <div class="py-4 flex flex-col gap-8">
+                  <p
+                    v-motion
+                    :initial="{ opacity: 0, y: 20 }"
+                    :enter="{ opacity: 1, y: 0 }"
+                    :delay="600">
+                    Con el tiempo descubrí Python, y fue un punto de quiebre: su claridad, versatilidad y comunidad me atraparon por completo. Me permitió ir más allá de la interfaz y entender mejor cómo funcionan las cosas detrás de escena. Así comencé a explorar el desarrollo backend, bases de datos, APIs y herramientas modernas como Docker. Hoy estoy aprendiendo sobre Kubernetes y prácticas de despliegue que me permiten llevar aplicaciones a producción de manera más robusta.
+                  </p>
+                  <p
+                    v-motion
+                    :initial="{ opacity: 0, y: 20 }"
+                    :enter="{ opacity: 1, y: 0 }"
+                    :delay="800">
+                    Programar para mí no es solo una habilidad técnica, es una forma de crear, de pensar, de mejorar cosas. Me motiva resolver problemas reales, automatizar tareas tediosas, y construir soluciones útiles y elegantes. Disfruto cada etapa del proceso: desde investigar, escribir y depurar código, hasta ver cómo lo que construí ayuda a otros.
+                  </p>
+                  <p
+                    v-motion
+                    :initial="{ opacity: 0, y: 20 }"
+                    :enter="{ opacity: 1, y: 0 }"
+                    :delay="800">
+                    Además de escribir código, me gusta aprender constantemente, ya sea explorando nuevas tecnologías, leyendo documentación, o contribuyendo en proyectos personales. También creo que mi entorno y mis intereses —como la historia, la ciencia y la tecnología— enriquecen mi manera de pensar como desarrollador.
+                  </p>
+                  <p
+                    v-motion
+                    :initial="{ opacity: 0, y: 20 }"
+                    :enter="{ opacity: 1, y: 0 }"
+                    :delay="800">
+                    Hoy, con varios proyectos encima y muchas ganas de seguir creciendo, tengo claro que este camino apenas empieza. Me gusta lo que hago, me apasiona aprender y mejorar cada día, y sobre todo, me motiva saber que con cada línea de código puedo acercarme un poco más a crear algo significativo.
+                  </p>
+                </div>
+              </div>
+              <div class="h-12 flex items-center justify-center">
+                <button
+                  ref="buttonRef"
+                  @click="toggleContent"
+                  class="px-6 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/90 flex items-center gap-2"
+                  :style="{ transform: 'translateY(-8px)' }"
+                >
+                  {{ showMore ? 'Ver menos' : 'Ver más' }}
+                  <UIcon
+                    :name="showMore ? 'i-lucide-chevron-up' : 'i-lucide-chevron-down'"
+                    class="w-5 h-5 transition-transform duration-500"
+                    :class="showMore ? 'rotate-180' : ''"
+                  />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </UContainer>
@@ -210,6 +235,53 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import gsap from 'gsap'
+
+const showMore = ref(false)
+const contentRef = ref(null)
+const buttonRef = ref(null)
+
+const toggleContent = () => {
+  showMore.value = !showMore.value
+
+  if (showMore.value) {
+    gsap.timeline()
+      .to(contentRef.value, {
+        height: 'auto',
+        duration: 0.8,
+        ease: 'power3.out'
+      })
+      .to(contentRef.value, {
+        opacity: 1,
+        duration: 0.4,
+        ease: 'power2.out'
+      }, '-=0.4')
+      .to(buttonRef.value, {
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, '-=0.8')
+  } else {
+    gsap.timeline()
+      .to(contentRef.value, {
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power2.in'
+      })
+      .to(contentRef.value, {
+        height: 0,
+        duration: 0.8,
+        ease: 'power3.in'
+      }, '-=0.2')
+      .to(buttonRef.value, {
+        y: -8,
+        duration: 0.8,
+        ease: 'power3.in'
+      }, '-=0.8')
+  }
+}
+
 const filosofia = [
   {
     icon: 'i-lucide-lightbulb',
