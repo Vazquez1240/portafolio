@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/test-utils',
-    '@vueuse/motion/nuxt'
+    '@vueuse/motion/nuxt',
   ],
 
   css: ['~/assets/css/main.css'],
@@ -24,10 +24,15 @@ export default defineNuxtConfig({
     domains: ['cloud-images-mdtv.web.app']
   },
 
+  runtimeConfig: {
+    EMAIL_USER: process.env.EMAIL_USER,
+    EMAIL_PASS: process.env.EMAIL_PASS,
+  },
+
   colorMode: {
-    preference: 'light', // establecer el modo por defecto
-    fallback: 'light', // fallback si no se puede detectar el sistema
-    classSuffix: '' // evita usar -dark o -light al final
+    preference: 'light',
+    fallback: 'light',
+    classSuffix: ''
   },
 
   compatibilityDate: '2024-11-27'
