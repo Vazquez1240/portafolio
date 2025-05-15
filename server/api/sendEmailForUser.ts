@@ -17,13 +17,36 @@ export default defineEventHandler(async (event: H3Event) => {
   const body = await readBody(event);
   const config = useRuntimeConfig();
 
-  console.log(config.EMAIL_USER, 'config.EMAIL_USER,')
+  // Depuración de las variables de entorno
+  console.log('Configuración de correo:', {
+    hasEmailUser: !!config.EMAIL_USER,
+    hasEmailPass: !!config.EMAIL_PASS,
+    emailUserLength: config.EMAIL_USER?.length,
+    emailPassLength: config.EMAIL_PASS?.length
+  });
+
+  // Validar que las credenciales estén configuradas
+  if (!config.EMAIL_USER || !config.EMAIL_PASS) {
+    return sendError(event, createError({ 
+      statusCode: 500, 
+      statusMessage: `Error de configuración: Credenciales de correo no configuradas. EMAIL_USER: ${!!config.EMAIL_USER}, EMAIL_PASS: ${!!config.EMAIL_PASS}` 
+    }));
+  }
+
   const { name, email, message, phone } = body as {
     name: string;
     email: string;
     message: string;
     phone: string;
   };
+
+  // Validar campos requeridos
+  if (!name || !email || !message) {
+    return sendError(event, createError({ 
+      statusCode: 400, 
+      statusMessage: 'Faltan campos requeridos: nombre, email o mensaje' 
+    }));
+  }
 
   const pathCorreoMio = path.join(process.cwd(), 'templates', 'correo_mio.hbs');
   const pathCorreoUsuario = path.join(process.cwd(), 'templates', 'correo_usuario.hbs');
@@ -45,7 +68,7 @@ export default defineEventHandler(async (event: H3Event) => {
 
   const mailToMe = {
     from: config.EMAIL_USER,
-    to: config.EMAIL_PASS,
+    to: config.EMAIL_USER,
     subject: `Nuevo mensaje de ${name}`,
     html: htmlToSend,
   };
@@ -58,11 +81,19 @@ export default defineEventHandler(async (event: H3Event) => {
   };
 
   try {
+    // Verificar la conexión antes de enviar
+    await transporter.verify();
+    
+    // Enviar los correos
     await transporter.sendMail(mailToMe);
     await transporter.sendMail(mailToUser);
+    
     return { message: 'Correo enviado exitosamente' };
   } catch (err) {
-    console.error(err);
-    return sendError(event, createError({ statusCode: 500, statusMessage: 'Error al enviar correo' + err }));
+    console.error('Error al enviar correo:', err);
+    return sendError(event, createError({ 
+      statusCode: 500, 
+      statusMessage: `Error al enviar correo: ${err.message}` 
+    }));
   }
 });

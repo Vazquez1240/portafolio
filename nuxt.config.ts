@@ -25,8 +25,13 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    // Variables privadas (solo servidor)
     EMAIL_USER: process.env.EMAIL_USER,
     EMAIL_PASS: process.env.EMAIL_PASS,
+    // Variables públicas (servidor y cliente)
+    public: {
+      // Aquí puedes agregar variables públicas si las necesitas
+    }
   },
 
   colorMode: {
