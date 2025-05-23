@@ -65,6 +65,7 @@
                 class="overflow-hidden"
                 :style="{ height: '0', opacity: 0 }"
               >
+
                 <div class="py-4 flex flex-col gap-8">
                   <p
                     v-motion
@@ -99,14 +100,16 @@
               <div class="h-12 flex items-center justify-center">
                 <button
                   ref="buttonRef"
-                  @click="toggleContent"
-                  class="px-6 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/90 flex items-center gap-2"
+                  variant="outline"
+                  color="neutral"
                   :style="{ transform: 'translateY(-8px)' }"
+                  class="px-6 py-2 text-black rounded-lg cursor-pointer flex items-center gap-2"
+                  @click="toggleContent"
                 >
                   {{ showMore ? 'Ver menos' : 'Ver más' }}
                   <UIcon
                     :name="showMore ? 'i-lucide-chevron-up' : 'i-lucide-chevron-down'"
-                    class="w-5 h-5 transition-transform duration-500"
+                    class="w-5 h-5 transition-transform text-black duration-500"
                     :class="showMore ? 'rotate-180' : ''"
                   />
                 </button>
