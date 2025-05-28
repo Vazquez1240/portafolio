@@ -238,7 +238,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import gsap from 'gsap'
 
 const showMore = ref(false)
@@ -305,19 +305,19 @@ const filosofia = [
 
 const hobbies = [
   {
-    icon: 'i-lucide-coffee',
+    icon: 'i-material-symbols:movie-edit-outline-sharp',
     title: 'Amante de las películas',
     text: 'Cinéfilo apasionado con gusto por diversos géneros, desde el cine clásico hasta las producciones contemporáneas. El cine es una fuente de inspiración y una forma de explorar nuevas ideas.',
   },
   {
-    icon: 'i-lucide-book',
+    icon: 'i-material-symbols:videogame-asset-outline-rounded',
     title: 'Amante de los videojuegos',
     text: 'Entusiasta de los videojuegos, especialmente aquellos con narrativas complejas y mecánicas innovadoras. Los videojuegos me han enseñado sobre diseño de experiencias y resolución de problemas.',
   },
   {
-    icon: 'i-lucide-camera',
-    title: 'Fotógrafo amateur',
-    text: 'Me gusta capturar momentos y paisajes...',
+    icon: 'i-mdi:playlist-music-outline',
+    title: 'Amante de la música',
+    text: 'Disfruto explorar distintos géneros y encontrar inspiración en cada melodía. La música me acompaña mientras estudio, trabajo o simplemente pienso.'
   },
 ]
 
@@ -334,8 +334,8 @@ const proyectos = [
   },
   {
     icon: 'i-geo:turf-center',
-    title: 'Nuevo Cliente para un Geoserver',
-    text: 'Este proyecto es uno de los mas ambiciosos ya que esto ya existe y es la plataforma OpenSource de Geonode, pero tiene un poco sus desventajas las cuales son el codigo obsoleto que se quedo, la idea de este proyectos es recrearlo utilizando tecnologias como lo es Nuxt y su libreria de componentes NuxtUI.'
+    title: 'Nuevo Cliente para un Geonode',
+    text: 'Este proyecto es uno de los mas ambiciosos ya que esto ya existe y es la plataforma OpenSource de Geonode, pero tiene un poco de desventajas las cuales son el codigo obsoleto que se quedo, la idea de este proyectos es recrearlo utilizando tecnologias como lo es Nuxt y su libreria de componentes NuxtUI.'
   }
 ]
 </script>
