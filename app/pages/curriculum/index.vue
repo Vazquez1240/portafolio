@@ -34,7 +34,7 @@
               :enter="{ opacity: 1, x: 0 }"
               :delay="400">
               <h2 class="text-2xl font-bold">Martín De La Torre Vázquez</h2>
-              <p class="text-lg text-gray-500 dark:text-gray-400">Desarrollador de software</p>
+              <p class="text-lg text-gray-500 dark:text-gray-400">Desarrollador Full-Stack | DevOps & Cloud</p>
             </div>
             <div
               v-motion
@@ -54,6 +54,10 @@
                 <Icon name="lucide:linkedin" class="h-4 w-4 text-gray-500" />
                 <span>linkedin.com/in/martindtv/</span>
               </div>
+              <div class="flex items-center gap-2">
+                <Icon name="lucide:map-pin" class="h-4 w-4 text-gray-500" />
+                <span>Monterrey, México</span>
+              </div>
             </div>
           </div>
 
@@ -64,9 +68,11 @@
             :delay="600"
             class="border-t pt-6 mb-6">
             <p class="text-lg text-gray-700 dark:text-gray-300" style="text-align: justify">
-              Desarrollador de software con experiencia en diseño e implementación de arquitecturas cloud y APIs escalables. Con experiencia en
-              Python y tecnologías de contenedores con conocimientos en despliegue de aplicaciones en entornos de nube como GCP, AWS y Azure.
-              Enfocado en la automatización de procesos, mejora continua y optimización de sistemas mediante metodologías ágiles
+              Desarrollador Full-Stack con experiencia construyendo aplicaciones web, APIs REST e infraestructura cloud para sectores público y
+              privado. Stack principal: Python (FastAPI, Django), JavaScript/TypeScript (Vue 3, Nuxt, React), .NET 6, despliegue multi-cloud en
+              AWS, Google Cloud y Microsoft Azure (Container Apps, Key Vault, NAT Gateway), pipelines CI/CD con Jenkins y GitHub Actions, y
+              orquestación con Docker y Kubernetes (K3s). Especialización adicional en CCaaS (Zoom Contact Center), asistentes virtuales con IA
+              e integración con HubSpot CRM. Enfocado en código limpio, despliegues sin interrupciones y soluciones escalables.
             </p>
           </div>
 
@@ -79,8 +85,9 @@
             <div class="md:col-span-1">
               <h3 class="font-semibold text-lg">Idiomas</h3>
               <ul class="mt-2 space-y-1 text-gray-500 dark:text-gray-400">
-                <li>Inglés: B1</li>
                 <li>Español: Nativo</li>
+                <li>Inglés: B1</li>
+                <li>Italiano: A2</li>
               </ul>
             </div>
           </div>
@@ -169,10 +176,10 @@
             class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             <div>
-              <h3 class="font-semibold text-lg mb-3">Herramientas y Tecnologías</h3>
+              <h3 class="font-semibold text-lg mb-3">Lenguajes de Programación</h3>
               <div class="flex flex-wrap gap-2">
-                <UBadge v-for="fw in habilidades.herraminetas" :key="fw" color="secondary" class="text-black" variant="soft">
-                  {{ fw }}
+                <UBadge v-for="lang in habilidades.lenguajes" :key="lang" color="secondary" class="text-black" variant="soft">
+                  {{ lang }}
                 </UBadge>
               </div>
             </div>
@@ -187,10 +194,46 @@
             </div>
 
             <div>
-              <h3 class="font-semibold text-lg mb-3">Lenguajes de Programación</h3>
+              <h3 class="font-semibold text-lg mb-3">Cloud Providers</h3>
               <div class="flex flex-wrap gap-2">
-                <UBadge v-for="lang in habilidades.lenguajes" :key="lang" color="secondary" class="text-black" variant="soft">
-                  {{ lang }}
+                <UBadge v-for="c in habilidades.cloud" :key="c" color="secondary" class="text-black" variant="soft">
+                  {{ c }}
+                </UBadge>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-lg mb-3">DevOps</h3>
+              <div class="flex flex-wrap gap-2">
+                <UBadge v-for="d in habilidades.devops" :key="d" color="secondary" class="text-black" variant="soft">
+                  {{ d }}
+                </UBadge>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-lg mb-3">Bases de Datos</h3>
+              <div class="flex flex-wrap gap-2">
+                <UBadge v-for="db in habilidades.bases_de_datos" :key="db" color="secondary" class="text-black" variant="soft">
+                  {{ db }}
+                </UBadge>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-lg mb-3">Integraciones & APIs</h3>
+              <div class="flex flex-wrap gap-2">
+                <UBadge v-for="i in habilidades.integraciones" :key="i" color="secondary" class="text-black" variant="soft">
+                  {{ i }}
+                </UBadge>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-lg mb-3">Herramientas</h3>
+              <div class="flex flex-wrap gap-2">
+                <UBadge v-for="t in habilidades.herraminetas" :key="t" color="secondary" class="text-black" variant="soft">
+                  {{ t }}
                 </UBadge>
               </div>
             </div>
@@ -198,8 +241,8 @@
             <div>
               <h3 class="font-semibold text-lg mb-3">Sistemas Operativos</h3>
               <div class="flex flex-wrap gap-2">
-                <UBadge v-for="lang in habilidades.sistemas_operativos" :key="lang" color="secondary" class="text-black" variant="soft">
-                  {{ lang }}
+                <UBadge v-for="so in habilidades.sistemas_operativos" :key="so" color="secondary" class="text-black" variant="soft">
+                  {{ so }}
                 </UBadge>
               </div>
             </div>
@@ -216,52 +259,74 @@ import { onMounted } from 'vue';
 
 const experiencia = [
   {
-    titulo: 'Analista de desarrollo',
-    empresa: 'Gobierno de Monterrey',
-    periodo: 'Noviembre 2023 - Actualidad',
-    descripcion_general: 'Encargado de la coordinación del Área de Desarrollo en la Secretaría de Innovación y Gobierno Abierto del Municipio de Monterrey, Nuevo León, liderando proyectos para optimizar procesos y mejorar la transparencia en los servicios públicos.',
+    titulo: 'Soporte Soluciones Colaboración · Desarrollador Full-Stack',
+    empresa: 'Axtel',
+    periodo: 'Septiembre 2025 – Actual',
+    descripcion_general: 'Responsable de implementación, integración y soporte técnico de soluciones colaborativas para clientes enterprise, especializándome en automatización de contact center, asistentes virtuales y desarrollo de APIs.',
     descripcion: [
-      'Diseño e implementación de arquitecturas de microservicios con Python, Django REST Framework y Docker, garantizando\n' +
-      'escalabilidad y alto rendimiento.',
-      'Desarrollo de APIs robustas para el procesamiento y análisis de datos municipales, utilizando principios RESTful y autenticación\n' +
-      'segura.',
-      'Despliegue y gestión de aplicaciones en Google Cloud Run, optimizando costos y recursos mediante estrategias de autoescalado.',
-      'Implementación de pipelines de integración continua para automatizar el despliegue de aplicaciones, reduciendo en un 40% los\n' +
-      'tiempos de lanzamiento.',
-      'Diseño y mantenimiento de bases de datos PostgreSQL, asegurando integridad y eficiencia en el almacenamiento de datos críticos.',
-      'Elaboración de documentación técnica y manuales de infraestructura para transferencia de conocimiento al equipo.',
-      'Aplicación de metodologías ágiles (Scrum), participando en planning, refinamientos y retrospectivas.',
-
+      'Implementación y configuración de Zoom Contact Center para clientes enterprise: diseño de flujos, enrutamiento de llamadas y administración de colas.',
+      'Desarrollo de asistentes virtuales en Zoom Virtual Agent con scripts en JavaScript, manejo de variables globales, integración con APIs externas y lógica de escalamiento a agente humano.',
+      'Diseño e implementación de campañas agentless dialer con listas de contactos dinámicas generadas desde CRM.',
+      'Desarrollo de APIs REST con FastAPI y Python para automatización de procesos, integración entre plataformas y exposición de servicios internos.',
+      'Integración de Zoom Contact Center con HubSpot CRM vía Webhooks y API REST para sincronización de leads, actualización de propiedades y seguimiento de actividad.',
+      'Despliegue y administración de infraestructura cloud en Azure: Container Apps, Key Vault, NAT Gateway con IP fija de salida, Container Registry y redes virtuales.',
+      'Diseño de arquitecturas con Docker y Kubernetes (K3s) para despliegues con alta disponibilidad y zero-downtime.'
     ]
   },
   {
-    titulo: 'Practicante',
-    empresa: 'USAER No.20',
-    periodo: 'Mayo 2022 – Mayo 2023',
-    descripcion_general: 'Liderazgo en el desarrollo de un sistema de gestión de alumnos, con enfoque en API robusta y frontend optimizado.',
+    titulo: 'Desarrollador Full-Stack',
+    empresa: 'Secretaría de Participación Ciudadana, Gobierno del Estado de Nuevo León',
+    periodo: 'Febrero 2025 – Agosto 2025',
+    descripcion_general: 'Mejora y mantenimiento de la plataforma 070, impulsando soluciones tecnológicas orientadas a la eficiencia y atención ciudadana.',
     descripcion: [
-      'Diseño e implementación de una API con Django REST Framework, estableciendo la arquitectura backend para un sistema de\n' + 'gestión de datos de alumnos.',
-      'Contenerización con Docker para garantizar entornos de desarrollo consistentes y despliegues reproducibles.',
-      'Creación del frontend con React, implementando visualizaciones interactivas de datos para facilitar análisis estadísticos.',
-      'Configuración de entornos Linux para alojamiento de servicios y optimización de seguridad del sistema.'
+      'Desarrollo y mantenimiento del sistema 070, implementando mejoras orientadas a la robustez, rendimiento y estabilidad de la plataforma.',
+      'Gestión de funciones críticas como carga masiva de archivos, corrección de bugs y refactorización de código, utilizando Vue.js en frontend y .NET 6 en backend.',
+      'Aplicación de metodologías ágiles (Scrum) para mejorar la eficiencia, colaboración y calidad en el desarrollo de soluciones interactivas con JavaScript y TypeScript.',
+      'Diseño e implementación desde cero de la arquitectura de servicios en Microsoft Azure: Container Apps, Application Gateway, NAT Gateway, Key Vault, Subnets y máquinas virtuales, integrando GitHub Actions y GitHub Container Registry.',
+      'Implementación completa de pipelines CI/CD con Jenkins, Docker y Kubernetes, asegurando despliegues automatizados, seguros y sin interrupciones.'
+    ]
+  },
+  {
+    titulo: 'Analista de Desarrollo',
+    empresa: 'Gobierno de Monterrey',
+    periodo: 'Abril 2023 – Febrero 2025',
+    descripcion_general: 'Coordinación del Área de Desarrollo en la Secretaría de Innovación y Gobierno Abierto del Municipio de Monterrey, liderando proyectos para optimizar procesos y mejorar la transparencia en los servicios públicos.',
+    descripcion: [
+      'Responsable del desarrollo de sistemas y aplicaciones web utilizando Python como lenguaje principal, junto con Django y Django REST Framework para la creación de APIs RESTful.',
+      'Implementación y optimización de APIs REST para asegurar robustez, rendimiento y mantenibilidad.',
+      'Gestión del mantenimiento y operatividad de aplicaciones basadas en Wagtail CMS.',
+      'Desarrollo de interfaces de usuario con Vue.js y construcción de componentes utilizando Nuxt y Quasar.',
+      'Creación de soluciones interactivas y dinámicas utilizando JavaScript y TypeScript.',
+      'Aplicación de metodologías ágiles como Scrum para mejorar la eficiencia, colaboración y calidad en el desarrollo.',
+      'Despliegue y operación de aplicaciones en Google Cloud Platform: Cloud Run para servicios containerizados, Cloud Storage para almacenamiento de archivos, Cloud SQL para bases de datos relacionales, Memorystore (Redis) para caché, Compute Engine (VMs) y diseño de redes con VPC.',
+      'Elaboración de documentación técnica detallada y capacitación al equipo, fomentando la innovación y la mejora continua en el desarrollo de soluciones tecnológicas.'
     ]
   }
 ]
 
 const educacion = [
-  { titulo: 'Ingeniería en desarrollo de software', institucion: 'Universidad Davinci', periodo: '2022 - 2024' },
-  { titulo: 'Desarrollador Python', institucion: 'Tokio School', periodo: '2021 - 2022' },
-  { titulo: 'Desarrollador Frontend', institucion: 'Oracle One Next Education', periodo: '2023 - 2023' },
-  { titulo: 'Técnico en programación', institucion: 'CBTIS No.46', periodo: '2019 - 2022' }
+  { titulo: 'Ingeniería en Desarrollo de Software', institucion: 'Universidad Da Vinci', periodo: '2022 - 2024' },
+  { titulo: 'Desarrollador Frontend', institucion: 'Oracle One Next Education', periodo: '2023' },
+  { titulo: 'Técnico en Programación', institucion: 'CBTIS No. 46', periodo: '2019 - 2022' }
 ]
 
 const habilidades = {
-  lenguajes: ['Python', 'JavaScript', 'TypeScript'],
-  frameworks: ['Django REST Framework', 'FastAPI', 'Flask', 'React', 'Vue', 'Next.js', 'Nuxt.js', 'Vuetify', 'Quasar', 'Material UI',
-  'NuxtUI', 'HerouUi', 'PrimeVue', 'Leaflet', 'OpenStreetMap'],
-  herraminetas: [ 'Docker', 'Git', 'MySQL', 'PostgreSQL', 'SQLAlchemy', 'Postman', 'Google Cloud', 'AWS', 'Microsoft Azure', 'Firebase',
-  'Heroku', 'DigitalOcean', 'Vercel', 'Railway' ],
-  sistemas_operativos: [ 'Ubuntu', 'MacOS', 'Windows' ]
+  lenguajes: ['Python', 'JavaScript', 'TypeScript', 'C#', 'PHP'],
+  frameworks: [
+    'FastAPI', 'Django', 'Django REST Framework', 'Flask', '.NET 6', 'Laravel',
+    'Vue 3', 'Nuxt.js', 'React', 'Next.js', 'Quasar', 'Vuetify', 'Material UI',
+    'NuxtUI', 'HeroUI', 'PrimeVue', 'Leaflet', 'OpenStreetMap'
+  ],
+  cloud: [
+    'AWS', 'Google Cloud (Cloud Run, Cloud Storage, Cloud SQL, Memorystore, Compute Engine, VPC)',
+    'Microsoft Azure (Container Apps, Key Vault, NAT Gateway, Application Gateway)',
+    'DigitalOcean', 'Vercel', 'Heroku', 'Railway', 'Firebase'
+  ],
+  devops: ['Docker', 'Kubernetes (K3s)', 'Jenkins', 'GitHub Actions', 'GitHub Container Registry'],
+  bases_de_datos: ['PostgreSQL', 'MySQL', 'SQL Server', 'Redis', 'SQLAlchemy', 'Entity Framework Core'],
+  integraciones: ['REST APIs', 'Webhooks', 'OAuth 2.0', 'HubSpot CRM', 'Zoom Contact Center', 'ngrok'],
+  herraminetas: ['Git', 'Postman', 'Grafana'],
+  sistemas_operativos: ['Ubuntu', 'macOS', 'Windows']
 }
 
 onMounted(() => {

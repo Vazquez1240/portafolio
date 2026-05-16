@@ -11,7 +11,7 @@ npm install
 # pnpm
 pnpm install
 
-# yarn
+# yarnw
 yarn install
 
 # bun

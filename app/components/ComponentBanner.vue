@@ -16,7 +16,7 @@
               :delay="200"
               class="inline-flex items-center px-3 py-1 rounded-full bg-secondary/10 text-black text-sm">
               <span class="w-2 h-2 rounded-full bg-secondary mr-2"></span>
-              Desarrollador de Software
+              Desarrollador Full-Stack | DevOps & Cloud
             </div>
 
             <h1
@@ -34,10 +34,10 @@
               :enter="{ opacity: 1, y: 0 }"
               :delay="600"
               class="text-lg text-muted-foreground">
-              Desarrollador de software con {{yearsOfExperience}} años de experiencia en el desarrollo backend y frontend de
-              aplicaciones, principalmente en el sector público y proyectos en la nube. Especializado en desarrollo
-              de microservicios con Python, diseño de arquitecturas escalables y despliegue continuo en entornos
-              cloud.
+              Desarrollador Full-Stack con {{yearsOfExperience}} años de experiencia construyendo aplicaciones web, APIs REST e
+              infraestructura cloud para sectores público y privado. Stack principal en Python (FastAPI, Django) y
+              JavaScript/TypeScript (Vue 3, Nuxt, React), con despliegue multi-cloud en AWS, Google Cloud y Microsoft Azure,
+              pipelines CI/CD y orquestación con Docker y Kubernetes.
             </p>
 
             <div

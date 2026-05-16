@@ -9,7 +9,7 @@
           :delay="200"
           class="space-y-2">
           <p class="text-4xl font-bold text-secondary">
-            <span v-motion-roll-visible="{ items: 3 }">3</span>+
+            <span v-motion-roll-visible="{ items: 3 }">4</span>+
           </p>
           <p class="text-muted-foreground">Años de experiencia</p>
         </div>

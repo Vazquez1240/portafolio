@@ -50,71 +50,36 @@
               :initial="{ opacity: 0, y: 20 }"
               :enter="{ opacity: 1, y: 0 }"
               :delay="200">
-              Mi interés por la tecnología comenzó desde pequeño, cuando me fascinaba abrir aparatos que ya no funcionaban solo para ver qué tenían dentro. Siempre me intrigó entender qué los hacía funcionar, cómo se conectaban sus partes, y qué pasaba cuando algo fallaba. Esa curiosidad, que en ese entonces era solo una forma de explorar el mundo, se convirtió con el tiempo en la base de mi vocación.
+              Mi camino en la tecnología empezó por curiosidad: de niño desarmaba aparatos solo para entender qué los hacía funcionar, cómo se conectaban sus partes y qué pasaba cuando algo fallaba. Esa misma inquietud me acompañó toda la adolescencia, primero como pasatiempo y después como una vocación clara — quería entender el mundo desde adentro, no solo usarlo.
             </p>
             <p
               v-motion
               :initial="{ opacity: 0, y: 20 }"
               :enter="{ opacity: 1, y: 0 }"
               :delay="400">
-              Fue en la preparatoria, como parte de mi carrera técnica, donde tuve mi primer contacto real con la programación. Al principio era un reto, pero pronto me di cuenta de que escribir código me hacía sentir algo diferente. Me gustaba pensar en lógica, buscar soluciones, ver cómo una idea se transformaba en algo que funcionaba en pantalla. Empecé a interesarme por cómo se construían las páginas web que usamos todos los días, y eso me llevó a aprender sobre desarrollo frontend.
+              En la preparatoria, como parte de una carrera técnica en programación, tuve mi primer contacto real con el código. Al principio era un reto enorme — la sintaxis, la lógica, los errores que no entendía — pero pronto descubrí que escribir código me hacía sentir algo distinto. Me gustaba pensar en lógica, transformar una idea en algo que funcionaba en pantalla y ver el mundo como un sistema de problemas resolubles. Eso me llevó a aprender desarrollo frontend y a construir mis primeros sitios web.
             </p>
-            <div  class="relative">
-              <div
-                ref="contentRef"
-                class="overflow-hidden"
-                :style="{ height: '0', opacity: 0 }"
-              >
-
-                <div class="py-4 flex flex-col gap-8">
-                  <p
-                    v-motion
-                    :initial="{ opacity: 0, y: 20 }"
-                    :enter="{ opacity: 1, y: 0 }"
-                    :delay="600">
-                    Con el tiempo descubrí Python, y fue un punto de quiebre: su claridad, versatilidad y comunidad me atraparon por completo. Me permitió ir más allá de la interfaz y entender mejor cómo funcionan las cosas detrás de escena. Así comencé a explorar el desarrollo backend, bases de datos, APIs y herramientas modernas como Docker. Hoy estoy aprendiendo sobre Kubernetes y prácticas de despliegue que me permiten llevar aplicaciones a producción de manera más robusta.
-                  </p>
-                  <p
-                    v-motion
-                    :initial="{ opacity: 0, y: 20 }"
-                    :enter="{ opacity: 1, y: 0 }"
-                    :delay="800">
-                    Programar para mí no es solo una habilidad técnica, es una forma de crear, de pensar, de mejorar cosas. Me motiva resolver problemas reales, automatizar tareas tediosas, y construir soluciones útiles y elegantes. Disfruto cada etapa del proceso: desde investigar, escribir y depurar código, hasta ver cómo lo que construí ayuda a otros.
-                  </p>
-                  <p
-                    v-motion
-                    :initial="{ opacity: 0, y: 20 }"
-                    :enter="{ opacity: 1, y: 0 }"
-                    :delay="800">
-                    Además de escribir código, me gusta aprender constantemente, ya sea explorando nuevas tecnologías, leyendo documentación, o contribuyendo en proyectos personales. También creo que mi entorno y mis intereses —como la historia, la ciencia y la tecnología— enriquecen mi manera de pensar como desarrollador.
-                  </p>
-                  <p
-                    v-motion
-                    :initial="{ opacity: 0, y: 20 }"
-                    :enter="{ opacity: 1, y: 0 }"
-                    :delay="800">
-                    Hoy, con varios proyectos encima y muchas ganas de seguir creciendo, tengo claro que este camino apenas empieza. Me gusta lo que hago, me apasiona aprender y mejorar cada día, y sobre todo, me motiva saber que con cada línea de código puedo acercarme un poco más a crear algo significativo.
-                  </p>
-                </div>
-              </div>
-              <div class="h-12 flex items-center justify-center">
-                <button
-                  ref="buttonRef"
-                  variant="outline"
-                  color="neutral"
-                  :style="{ transform: 'translateY(-8px)' }"
-                  class="px-6 py-2 text-black rounded-lg cursor-pointer flex items-center gap-2"
-                  @click="toggleContent"
-                >
-                  {{ showMore ? 'Ver menos' : 'Ver más' }}
-                  <UIcon
-                    :name="showMore ? 'i-lucide-chevron-up' : 'i-lucide-chevron-down'"
-                    class="w-5 h-5 transition-transform text-black duration-500"
-                    :class="showMore ? 'rotate-180' : ''"
-                  />
-                </button>
-              </div>
-            </div>
+            <p
+              v-motion
+              :initial="{ opacity: 0, y: 20 }"
+              :enter="{ opacity: 1, y: 0 }"
+              :delay="600">
+              Más adelante descubrí Python, y fue un punto de quiebre. Su claridad, versatilidad y comunidad me atraparon por completo. Me permitió ir más allá de la interfaz y entender cómo funcionan las cosas detrás de escena: APIs, bases de datos, infraestructura, procesos asíncronos. Así me adentré en el desarrollo backend con Django y FastAPI, y empecé a pensar en el software como un sistema integral, no solo como una pantalla bonita.
+            </p>
+            <p
+              v-motion
+              :initial="{ opacity: 0, y: 20 }"
+              :enter="{ opacity: 1, y: 0 }"
+              :delay="800">
+              Hoy soy Desarrollador Full-Stack con foco en Python (FastAPI, Django) y JavaScript/TypeScript (Vue 3, Nuxt, React), además de .NET 6. He construido aplicaciones web, APIs REST e infraestructura cloud para sector público y privado: desde sistemas de atención ciudadana en gobierno hasta plataformas de contact center y asistentes virtuales en el ámbito enterprise. En el camino aprendí a trabajar con AWS, Google Cloud y Azure, a diseñar pipelines CI/CD con Jenkins y GitHub Actions, y a orquestar despliegues con Docker y Kubernetes (K3s) buscando que las cosas escalen sin romperse.
+            </p>
+            <p
+              v-motion
+              :initial="{ opacity: 0, y: 20 }"
+              :enter="{ opacity: 1, y: 0 }"
+              :delay="1000">
+              En paralelo, estoy levantando <a href="https://nexosoftdev.com" target="_blank" rel="noopener noreferrer" class="text-secondary font-medium hover:underline">NexosoftDev</a>, un proyecto personal con el que busco construir, poco a poco, una propuesta propia de soluciones tecnológicas integrales. Me motiva crear productos que ayuden a personas reales, automatizar lo tedioso y diseñar arquitecturas limpias que sigan teniendo sentido dos años después. No me veo solo escribiendo código: me veo aprendiendo constantemente, leyendo documentación, probando herramientas nuevas y entendiendo cómo aplicar la tecnología en contextos donde realmente puede cambiar algo. Apenas estoy en el inicio del camino, y eso es justamente lo que más me entusiasma.
+            </p>
           </div>
         </div>
       </UContainer>
@@ -206,6 +171,15 @@
               </template>
               <h3 class="text-xl font-semibold mb-2">{{ proyecto.title }}</h3>
               <p class="text-gray-600">{{ proyecto.text }}</p>
+              <a
+                v-if="proyecto.url"
+                :href="proyecto.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center gap-1 text-secondary font-medium hover:underline">
+                {{ proyecto.urlLabel || 'Visitar sitio' }}
+                <UIcon name="i-lucide-arrow-up-right" class="w-4 h-4" />
+              </a>
             </UCard>
           </div>
         </div>
@@ -238,68 +212,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import gsap from 'gsap'
-
-const showMore = ref(false)
-const contentRef = ref(null)
-const buttonRef = ref(null)
-
-const toggleContent = () => {
-  showMore.value = !showMore.value
-
-  if (showMore.value) {
-    gsap.timeline()
-      .to(contentRef.value, {
-        height: 'auto',
-        duration: 0.8,
-        ease: 'power3.out'
-      })
-      .to(contentRef.value, {
-        opacity: 1,
-        duration: 0.4,
-        ease: 'power2.out'
-      }, '-=0.4')
-      .to(buttonRef.value, {
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out'
-      }, '-=0.8')
-  } else {
-    gsap.timeline()
-      .to(contentRef.value, {
-        opacity: 0,
-        duration: 0.4,
-        ease: 'power2.in'
-      })
-      .to(contentRef.value, {
-        height: 0,
-        duration: 0.8,
-        ease: 'power3.in'
-      }, '-=0.2')
-      .to(buttonRef.value, {
-        y: -8,
-        duration: 0.8,
-        ease: 'power3.in'
-      }, '-=0.8')
-  }
-}
-
 const filosofia = [
   {
     icon: 'i-lucide-lightbulb',
-    title: 'Simplicidad es clave',
-    text: 'Creo que las mejores soluciones son las más simples. Me esfuerzo por escribir código limpio, mantenible y elegante que resuelva problemas complejos de manera sencilla.',
+    title: 'Simplicidad como principio',
+    text: 'Las mejores soluciones suelen ser las más simples. Prefiero código limpio, modular y bien probado por encima de la sobreingeniería: arquitecturas claras que cualquier persona del equipo pueda leer, mantener y extender sin fricción.',
   },
   {
     icon: 'i-lucide-heart',
-    title: 'Centrado en el usuario',
-    text: 'La tecnología debe servir a las personas. Siempre pienso en quién usará lo que estoy creando y cómo puedo hacer su experiencia más intuitiva y agradable.',
+    title: 'Pensar en quien lo usa',
+    text: 'La tecnología existe para servir a las personas. Antes de escribir una línea pienso a quién va dirigida y cómo hacer que su experiencia sea más intuitiva, accesible y eficiente, ya sea un usuario final, un cliente interno o un compañero developer.',
   },
   {
     icon: 'i-lucide-globe',
-    title: 'Impacto positivo',
-    text: 'Aspiro a crear tecnología que tenga un impacto positivo en la sociedad. Me apasionan especialmente los proyectos que mejoran la vida de las personas o contribuyen al bien común.',
+    title: 'Construir con impacto',
+    text: 'Aspiro a desarrollar tecnología con impacto real. Me motivan los proyectos que optimizan procesos del sector público, automatizan operaciones internas y aportan valor concreto a la vida de las personas y comunidades a las que sirven.',
   },
 ]
 
@@ -315,9 +242,9 @@ const hobbies = [
     text: 'Entusiasta de los videojuegos, especialmente aquellos con narrativas complejas y mecánicas innovadoras. Los videojuegos me han enseñado sobre diseño de experiencias y resolución de problemas.',
   },
   {
-    icon: 'i-mdi:playlist-music-outline',
-    title: 'Amante de la música',
-    text: 'Disfruto explorar distintos géneros y encontrar inspiración en cada melodía. La música me acompaña mientras estudio, trabajo o simplemente pienso.'
+    icon: 'i-lucide-languages',
+    title: 'Aprendiendo italiano',
+    text: 'Estoy estudiando italiano por gusto y curiosidad cultural. Aprender un nuevo idioma me ayuda a conectar con otras formas de pensar, ampliar mi vocabulario y entrenar la disciplina que también aplico al programar.'
   },
 ]
 
@@ -325,17 +252,19 @@ const proyectos = [
   {
     icon: 'material-symbols:local-convenience-store-outline-sharp',
     title: 'E-commerce',
-    text: 'Esta sera una plataforma OpenSource, la cual se basara en diferentes modulos, un E-commerce muy completo, desarrollado con Wagatil y PrimeVue, la finalidad de este proyecto es poder ofrecerle al cliente un E-commerce completo desde el inicio.'
+    text: 'Plataforma OpenSource de E-commerce construida sobre una arquitectura modular, con Django REST Framework en el backend y NuxtUI en el frontend. Incluye módulos de catálogo, carrito, pasarela de pagos, gestión de inventario y panel administrativo. El objetivo es entregar al cliente una tienda en línea completa, escalable y lista para producción desde el primer día, sin partir desde cero.'
   },
   {
     icon: 'material-symbols:insert-chart-outline-sharp',
     title: 'Levantamiento de NexosoftDev',
-    text: 'NexosoftDev es una startup de la cual yo soy CEO y Fundador, la idea de este proyecto es poder ofrecer a los clientes soluciones en tecnologia ampliamente grandes, con un equipo especializado desde el ux/ui hasta la parte de DevOps, tambien contar con un equipo de marketing.'
+    text: 'NexosoftDev es el proyecto personal que estoy levantando con la idea de convertirlo, con el tiempo, en una propuesta propia de soluciones tecnológicas integrales. Por ahora soy una sola persona detrás de la marca, definiendo la visión y las primeras piezas que abarcarán desde UX/UI hasta DevOps. El objetivo es hacerlo crecer paso a paso, sumar talento y abrir las puertas a los primeros clientes.',
+    url: 'https://nexosoftdev.com',
+    urlLabel: 'nexosoftdev.com'
   },
   {
-    icon: 'i-geo:turf-center',
-    title: 'Nuevo Cliente para un Geonode',
-    text: 'Este proyecto es uno de los mas ambiciosos ya que esto ya existe y es la plataforma OpenSource de Geonode, pero tiene un poco de desventajas las cuales son el codigo obsoleto que se quedo, la idea de este proyectos es recrearlo utilizando tecnologias como lo es Nuxt y su libreria de componentes NuxtUI.'
+    icon: 'i-lucide-calendar-check',
+    title: 'Sistema de Gestión de Citas',
+    text: 'SaaS multi-tenant de agendamiento médico construido con Django REST Framework y un monorepo Nuxt 4 + NuxtUI. Cada clínica o doctor independiente cuenta con su propio subdominio (sitio público de reservas, panel admin y portal médico), respaldado por un panel central de plataforma para gestionar tenants, planes y suscripciones. Integra PostgreSQL, Redis, Celery y sugerencias con IA vía Ollama.'
   }
 ]
 </script>

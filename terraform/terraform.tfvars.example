@@ -1,0 +1,11 @@
+do_token   = "dop_v1_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+email_user = "tu-correo@gmail.com"
+email_pass = "xxxx xxxx xxxx xxxx"
+
+# Opcionales (descomenta para sobrescribir defaults)
+# app_name           = "portafolio-martindtv"
+# region             = "nyc"
+# instance_size_slug = "basic-xxs"
+# github_repo        = "Vazquez1240/portafolio"
+# github_branch      = "main"
+# domain_name        = "martindtv.dev"

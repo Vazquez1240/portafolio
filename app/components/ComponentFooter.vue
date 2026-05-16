@@ -55,6 +55,18 @@
             <span class="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-blue-600
                        transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
           </a>
+          <a href="https://nexosoftdev.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="NexosoftDev"
+             class="group relative">
+            <Icon name="mdi:web"
+                  class="h-5 w-5 text-gray-600 transition-all duration-300
+                         group-hover:text-blue-600 group-hover:scale-125
+                         group-hover:-translate-y-1 group-hover:rotate-6" />
+            <span class="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-blue-600
+                       transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+          </a>
         </div>
 
         <!-- Credits -->
